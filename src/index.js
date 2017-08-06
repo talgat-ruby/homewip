@@ -11,22 +11,25 @@ import { MongoClient } from 'mongodb';
 import { PORT, PATHS } from './constants/app-constants';
 
 // methods, functions, utilities
-import populateDb from './db/';
+// import populateDb from './db/';
 import API from './rest-api';
 
 
 const app = new Koa();
 const router = new Route();
-const uri = 'mongodb://localhost:27017/myproject';
+const uri = (process.env.MONGO_USER && process.env.MONGO_PASSWORD && process.env.MONGO_DATABASE) ?
+				`mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0-shard-00-00-4ukzn.mongodb.net:27017,cluster0-shard-00-01-4ukzn.mongodb.net:27017,cluster0-shard-00-02-4ukzn.mongodb.net:27017/${process.env.MONGO_DATABASE}?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin` :
+				'mongodb://localhost:27017/myproject';
 
-app.use(cors());
-
-app.use(bodyParser());
 
 MongoClient.connect(uri, (err, db) => {
 	// populateDb(db);
 	API(router, db);
 });
+
+app.use(cors());
+
+app.use(bodyParser());
 
 app.use(router.routes()).use(router.allowedMethods());
 
@@ -38,7 +41,4 @@ if(process.env.NODE_ENV !== 'development') {
 	});
 }
 
-
 app.listen(process.env.PORT || PORT);
-
-// mongodb://talgat_sarybaev:SEgTNp2F@cluster0-shard-00-00-4ukzn.mongodb.net:27017,cluster0-shard-00-01-4ukzn.mongodb.net:27017,cluster0-shard-00-02-4ukzn.mongodb.net:27017/blog?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin
