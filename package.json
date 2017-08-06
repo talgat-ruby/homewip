@@ -40,7 +40,7 @@
     "eslint:watch": "esw -w --color ./src/",
     "dev": "NODE_ENV=development concurrently \"npm run nodemon\" \"npm run eslint:watch\"",
     "start": "npm install && npm install --only=dev --no-shrinkwrap && npm run build && node build/index.js",
-    "heroku-postbuild": "cd client/ && npm install && npm install --only=dev --no-shrinkwrap && npm run"
+    "heroku-postbuild": "cd client/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "author": "",
   "license": "ISC"
