@@ -1,0 +1,16 @@
+.main-header {
+  background-color: var(--header-bg-color);
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: 1fr;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.main-header .logo {
+  height: 80%;
+  width: auto;
+  cursor: pointer;
+}

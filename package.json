@@ -1,0 +1,37 @@
+{
+  "name": "homewip",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "kcors": "^2.2.1",
+    "koa": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.2.1",
+    "koa-send": "^4.1.0",
+    "koa-static": "^4.0.1",
+    "mongodb": "^2.2.30"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "concurrently": "^3.5.0",
+    "eslint": "^4.3.0",
+    "eslint-watch": "^3.1.2",
+    "nodemon": "^1.11.0",
+    "rimraf": "^2.6.1"
+  },
+  "scripts": {
+    "clean": "rimraf build",
+    "babel": "babel src -d build --copy-files",
+    "build": "NODE_ENV=production npm run clean && npm run babel",
+    "nodemon": "nodemon ./src --exec babel-node",
+    "eslint:watch": "esw -w --color ./src/",
+    "dev": "NODE_ENV=development concurrently \"npm run nodemon\" \"npm run eslint:watch\""
+  },
+  "author": "",
+  "license": "ISC"
+}

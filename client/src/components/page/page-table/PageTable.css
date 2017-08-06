@@ -1,0 +1,37 @@
+.page-table {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-row-gap: 3rem;
+}
+
+.page-table > h3 {
+  grid-column: 1 / 2;
+  font-size: 1.8rem;
+}
+
+.page-table .button {
+  grid-column: -2 / -1;
+}
+
+.page-table > .table {
+  grid-column: 1 / -1;
+}
+
+.page-table > .table .row {
+  grid-template-columns: 4fr 2fr 1fr;
+}
+
+.page-table > .table .row .col:not(.head):first-child > input {
+  display: grid;
+  box-sizing: border-box;
+  height: 100%;
+  margin: 0 -2rem;
+  padding: 0 2rem;
+  background-color: transparent;
+  border: none;
+}
+
+.page-table > .table .row .col:not(.head):nth-child(3) {
+  justify-content: center;
+}

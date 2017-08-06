@@ -1,0 +1,25 @@
+.pages {
+  display: grid;
+  grid-gap: 2rem;
+}
+
+.pages > h2 {
+  font-size: 2.5rem;
+}
+
+.pages .content {
+  background-color: white;
+  box-shadow: var(--bx-shd-default);
+  padding: 4rem;
+  display: grid;
+}
+
+.pages .content .table .row {
+  grid-template-columns: 2fr 1fr;
+}
+
+.pages .content .table .row:not(.head):hover {
+  cursor: pointer;
+  background-color: var(--main-color);
+  color: white;
+}

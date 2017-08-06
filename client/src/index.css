@@ -1,0 +1,28 @@
+:root {
+  --body-bg-color: #ECF0F1;
+  --header-bg-color: #222;
+  --main-color: #3CA2E0;
+  --fnt-default-color: #666666;
+  --bx-shd-default: 0px 3px 5px 0 rgba(174,174,174,0.5);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--body-bg-color);
+  color: var(--fnt-default-color);
+  font-family: sans-sefir;
+}
+
+
+/* reset some configs */
+h1, h2, h3 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

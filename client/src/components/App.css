@@ -1,0 +1,67 @@
+.app {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    ". main ."
+    ". . .";
+  grid-template-rows: 7rem auto 4rem;
+  grid-template-columns: 10% 1fr 10%;
+  grid-row-gap: 4rem;
+}
+
+.app > *:first-child {
+  grid-area: header;
+}
+
+.app > *:nth-child(2) {
+  grid-area: main;
+}
+
+
+/* Table */
+
+.table {
+  font-size: 1.4rem;
+  font-family: serif;
+  display: grid;
+  grid-auto-rows: 4rem;
+}
+
+.table .row {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+}
+
+.table .row.head {
+  background-color: #333;
+  color: white;
+  font-weight: bolder;
+}
+
+.table .row:not(.head) {
+  border-bottom: 1px solid #ccc;
+}
+
+.table .row:not(.head):last-child {
+  border-bottom: none;
+}
+
+.table .row:not(.head):nth-child(odd) {
+  background-color: #ddd;
+}
+
+.table .col {
+  display: grid;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.table .col {
+  border-right: 1px solid #ccc;
+}
+
+.table .col:last-child {
+  border-right: none;
+}
+

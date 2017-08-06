@@ -1,0 +1,26 @@
+.button {
+  border: 2px solid var(--main-color);
+  margin: 0px;
+  padding: 0px;
+  background-color: transparent;
+  color: var(--main-color);
+  font-size: 1.4rem;
+  border-radius: 1.7rem;
+}
+
+.button.disabled {
+  background-color: grey;
+  border-color: grey;
+  color: white;
+}
+
+.button.has-name, .button > * {
+  display: flex;
+  padding: 0.5rem 1rem;
+}
+
+.button:not(.disabled):hover {
+  cursor: pointer;
+  background-color: var(--main-color);
+  color: white;
+}
